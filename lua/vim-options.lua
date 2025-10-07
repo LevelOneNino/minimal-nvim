@@ -33,4 +33,6 @@ vim.keymap.set('n', 'k', "gk", { noremap = true })
 vim.keymap.set('n', '<C-d>', "7gj", { noremap = true })
 vim.keymap.set('n', '<C-u>', "7gk", { noremap = true })
 
+vim.keymap.set('n', '<leader>e', ":Explore<CR>", { noremap = true })
+
 vim.cmd("colorscheme nino")
