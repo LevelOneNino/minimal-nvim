@@ -24,5 +24,6 @@ return {
     })
     vim.keymap.set("n", "gh","<cmd>Gitsigns preview_hunk<CR>")
     vim.keymap.set("n", "grh","<cmd>Gitsigns reset_hunk<CR>")
+    vim.keymap.set("n", "<leader>d","<cmd>Gitsigns diffthis<CR>")
   end
 }
