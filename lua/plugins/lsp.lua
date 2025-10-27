@@ -87,14 +87,7 @@ return {
         end,
       })
       require('mason-lspconfig').setup({
-        ensure_installed = {
-          -- "ts_ls",
-          -- "pylsp",
-          "lua_ls",
-          -- "emmet_language_server",
-          -- "cssls",
-          -- "html",
-        },
+        ensure_installed = { "lua_ls" },
         handlers = {
           function(server_name)
             require('lspconfig')[server_name].setup({})
@@ -103,28 +96,8 @@ return {
             require('lspconfig').ts_ls.setup({
               on_attach = function(client, bufnr)
                 client.server_capabilities.semanticTokensProvider = nil
-                require("nvim-lsp-ts-utils").setup({
-                  filter_out_diagnostics_by_code = { 80001 },
-                })
                 require("nvim-lsp-ts-utils").setup_client(client)
               end,
-              settings = {
-                implementationsCodeLens = {
-                  enabled = false
-                }
-              }
-            })
-          end,
-          html = function()
-            require('lspconfig').html.setup({
-              settings = {
-                html = {
-                  format = {
-                    indentInnerHtml = true,
-                    maxPreserveNewLines = true,
-                  }
-                }
-              }
             })
           end,
           lua_ls = function()
@@ -132,26 +105,6 @@ return {
               root_dir = vim.fn.getcwd()
             })
           end,
-          pylsp = function()
-            require("lspconfig").pylsp.setup({
-              settings = {
-                pylsp = {
-                  plugins = {
-                    pycodestyle = {
-                      ignore = { "E265" },
-                      maxLineLength = 111
-                    },
-                    autopep8 = {
-                      enabled = false
-                    },
-                    yapf = {
-                      enabled = true,
-                    },
-                  }
-                }
-              }
-            })
-          end
         }
       })
     end
