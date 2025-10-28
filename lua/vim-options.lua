@@ -61,12 +61,6 @@ vim.keymap.set('n', '<M-j>', ":cnext<CR>", { noremap = true })
 vim.keymap.set('n', '<M-k>', ":cprevious<CR>", { noremap = true })
 
 vim.g.netrw_banner = 0
+vim.keymap.set('v', 'mf', ":normal mf<CR>", { noremap = true })
 
 vim.cmd("colorscheme nino")
-
--- vim.api.nvim_create_autocmd("BufWritePost", {
---   pattern = "*.go",
---   callback = function()
---     vim.cmd [[LspRestart]]
---   end
--- })
