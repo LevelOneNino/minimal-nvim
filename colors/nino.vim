@@ -4,6 +4,7 @@ let g:colors_name = 'nino'
 let s:t_Co = &t_Co
 
 hi! link Terminal Normal
+hi! link netrwMarkFile Search
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
 hi! link MessageWindow Pmenu

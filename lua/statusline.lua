@@ -7,15 +7,15 @@ function _G.Diagnostics()
   end
   local warnings = #vim.diagnostic.get(0, { severity = severity.WARN })
   if warnings > 0 then
-    diagnostic = diagnostic ..' %#DiagnosticSignWarn#W' .. warnings
+    diagnostic = diagnostic .. ' %#DiagnosticSignWarn#W' .. warnings
   end
   local hints = #vim.diagnostic.get(0, { severity = severity.HINT })
   if hints > 0 then
-    diagnostic = diagnostic ..' %#DiagnosticSignHint#H' .. hints
+    diagnostic = diagnostic .. ' %#DiagnosticSignHint#H' .. hints
   end
   local infos = #vim.diagnostic.get(0, { severity = severity.INFO })
   if infos > 0 then
-    diagnostic = diagnostic ..' %#DiagnosticSignInfo#I' .. infos
+    diagnostic = diagnostic .. ' %#DiagnosticSignInfo#I' .. infos
   end
   return diagnostic
 end
@@ -48,12 +48,21 @@ function _G.GitStatus()
   }
 end
 
-local statusline= {
+function _G.GetNetrwTgt()
+  local filetype = vim.bo.filetype
+  if filetype == 'netrw' then
+    return "%#CurSearch#" .. vim.api.nvim_call_function('netrw#Expose', { 'netrwmftgt' }) .. "%*"
+  end
+  return ""
+end
+
+local statusline = {
   " ",
   "%y ",
   "%f ",
   "%m ",
   "%#pmenu#%l:%v ",
+  "%{%v:lua.GetNetrwTgt()%}",
   "%{%v:lua.Diagnostics()%}",
   "%*%=",
   "%{%v:lua.GitStatus()%}",
