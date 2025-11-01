@@ -16,6 +16,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
+vim.g.mkdp_auto_close = 0
 
 require("lazy").setup("plugins")
 require("vim-options")
