@@ -61,6 +61,8 @@ hi! link NotifyINFOBorder DiagnosticInfo
 hi! link NotifyDEBUGBorder DiagnosticWarn 
 hi! link NotifyTRACEBorder DiagnosticHint
 
+hi! link htmlH1 Clear
+
 hi Normal guifg=#bdbddb guibg=#191a22 gui=NONE cterm=NONE
 hi FloatNormal guifg=#bdbddb guibg=#101319 gui=NONE cterm=NONE
 hi FloatBorder guifg=#404050 guibg=#101319 gui=NONE cterm=NONE
@@ -105,7 +107,7 @@ hi MatchParen guifg=#101319 guibg=#bdbddb gui=NONE cterm=NONE
 
 hi ModeMsg guifg=#10e020 guibg=#101319 gui=NONE cterm=NONE
 hi MoreMsg guifg=#10e020 guibg=#101319 gui=NONE cterm=NONE
-hi NonText guifg=#e02530 guibg=NONE gui=NONE cterm=NONE
+hi NonText guifg=#404050 guibg=NONE gui=NONE cterm=NONE
  
 hi MsgArea guifg=#10e020 guibg=#101319 gui=NONE cterm=NONE
 
@@ -150,6 +152,9 @@ hi Statement guifg=#10e020 guibg=NONE gui=NONE cterm=NONE
 hi String guifg=#f0b020 guibg=NONE gui=NONE cterm=NONE
 hi Type guifg=#556060 guibg=NONE gui=NONE cterm=NONE
 hi Error guifg=#e02530 guibg=NONE gui=NONE cterm=NONE
+
+hi IndentLine guifg=#101319
+hi IndentLineCurrent guifg=#404050
 
 hi Underlined guifg=#9090a0 guibg=NONE gui=underline cterm=underline
 

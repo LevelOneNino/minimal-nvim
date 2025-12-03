@@ -8,15 +8,11 @@ vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.cmd("set numberwidth=5")
 
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set colorcolumn=111,222,333,444,555")
+vim.cmd("set tabstop=4")
+vim.cmd("set colorcolumn=111")
 vim.cmd("set wrap")
 vim.cmd("set breakindent")
--- vim.cmd("set breakindentopt=shift:4,sbr")
-vim.cmd("set breakindentopt=sbr")
+vim.cmd("set breakindentopt=sbr,shift:8")
 vim.cmd("set showbreak=│")
 
 vim.opt.lbr = true
@@ -38,6 +34,8 @@ vim.keymap.set('n', '<leader>s', ":Sexplore<CR>", { noremap = true })
 vim.keymap.set('n', '<leader>f', ":fin ", { noremap = true })
 
 vim.cmd("set path=.,**")
+vim.cmd("command -nargs=1 VimgrepProj vim /<args>/gj **/* | copen")
+vim.keymap.set('n', '<leader>v', ":VimgrepProj ", { noremap = true })
 
 vim.cmd("set wildignore=")
 vim.cmd("set wildignore+=*/.git/**")
@@ -46,14 +44,14 @@ vim.cmd("set wildignore+=*/.venv/**")
 vim.cmd("set wildignore+=*/__pycache__/**")
 
 local function toggle_quickfix()
-  local windows = vim.fn.getwininfo()
-  for _, win in pairs(windows) do
-    if win["quickfix"] == 1 then
-      vim.cmd.cclose()
-      return
-    end
-  end
-  vim.cmd.copen()
+	local windows = vim.fn.getwininfo()
+	for _, win in pairs(windows) do
+		if win["quickfix"] == 1 then
+			vim.cmd.cclose()
+			return
+		end
+	end
+	vim.cmd.copen()
 end
 
 vim.keymap.set('n', '<M-q>', toggle_quickfix, { desc = "Toggle Quickfix Window" })
