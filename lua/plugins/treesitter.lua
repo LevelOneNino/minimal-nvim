@@ -14,12 +14,16 @@ return {
 			"python",
 			"javascript",
 			"tsx",
+			"go",
+			"bash",
+			"json",
+			"yaml",
+			"toml",
 		}
 		require('nvim-treesitter').install(langs)
 		vim.api.nvim_create_autocmd('FileType', {
 			pattern = require('nvim-treesitter').get_installed(),
 			callback = function()
-				-- local installed = require('nvim-treesitter').get_installed
 				vim.treesitter.start()
 			end,
 		})

@@ -63,6 +63,8 @@ hi! link NotifyTRACEBorder DiagnosticHint
 
 hi! link htmlH1 Clear
 
+hi! link @variable.parameter.bash Special
+
 hi Normal guifg=#bdbddb guibg=#191a22 gui=NONE cterm=NONE
 hi FloatNormal guifg=#bdbddb guibg=#101319 gui=NONE cterm=NONE
 hi FloatBorder guifg=#404050 guibg=#101319 gui=NONE cterm=NONE
