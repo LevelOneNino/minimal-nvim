@@ -125,7 +125,11 @@ hi PmenuKindSel guifg=#000000 guibg=#d5d5ff gui=NONE cterm=NONE
 
 hi Question guifg=#f0b020 guibg=NONE gui=NONE cterm=NONE
 
-hi QuickFixLine guifg=#e02530 guibg=NONE gui=NONE cterm=NONE
+hi QuickFixLine guifg=NONE guibg=NONE gui=NONE cterm=NONE
+hi link qfText Clear
+hi link qfLineNr Clear
+hi qfLineNr guifg=#404050 guibg=NONE gui=NONE cterm=NONE
+hi qfFileName guifg=#f0b020 guibg=NONE gui=NONE cterm=NONE
 
 hi CurSearch guifg=#101319 guibg=#f0b020 gui=NONE cterm=NONE
 hi Search guifg=#101319 guibg=#e02530 gui=NONE cterm=NONE
@@ -170,10 +174,10 @@ hi DiagnosticSignInfo guifg=#10e020 guibg=#101319 gui=NONE cterm=NONE
 hi DiagnosticSignWarn guifg=#f0b020 guibg=#101319 gui=NONE cterm=NONE
 hi DiagnosticSignOk guifg=#10e020 guibg=NONE gui=NONE cterm=NONE
 
-hi DiagnosticUnderlineHint guisp=#3545c5 gui=underline cterm=underline
-hi DiagnosticUnderlineError guisp=#e02530 gui=underline cterm=underline
-hi DiagnosticUnderlineInfo guisp=#10e020 gui=underline cterm=underline
-hi DiagnosticUnderlineWarn guisp=#f0b020 gui=underline cterm=underline
+hi DiagnosticUnderlineHint guisp=#3545c5 gui=undercurl cterm=undercurl
+hi DiagnosticUnderlineError guisp=#e02530 gui=undercurl cterm=undercurl
+hi DiagnosticUnderlineInfo guisp=#10e020 gui=undercurl cterm=undercurl
+hi DiagnosticUnderlineWarn guisp=#f0b020 gui=undercurl cterm=undercurl
 hi DiagnosticUnderlineOk guifg=#10e020 guibg=NONE gui=NONE cterm=NONE
 
 hi helpSectionDelim guifg=#f0b020 guibg=#101319 gui=NONE cterm=NONE

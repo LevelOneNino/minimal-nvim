@@ -9,6 +9,8 @@ vim.cmd("set relativenumber")
 vim.cmd("set numberwidth=5")
 
 vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=4")
+vim.cmd("set shiftwidth=4")
 vim.cmd("set colorcolumn=111")
 vim.cmd("set wrap")
 vim.cmd("set breakindent")
@@ -57,6 +59,25 @@ end
 vim.keymap.set('n', '<M-q>', toggle_quickfix, { desc = "Toggle Quickfix Window" })
 vim.keymap.set('n', '<M-j>', ":cnext<CR>", { noremap = true })
 vim.keymap.set('n', '<M-k>', ":cprevious<CR>", { noremap = true })
+
+vim.keymap.set('n', '<M-d>', function()
+		vim.diagnostic.setqflist({ bufnr = vim.api.nvim_get_current_buf() })
+	end,
+	{ desc = "Set diagnostics to quickfix" })
+
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = "qf",
+	callback = function()
+		vim.opt_local.wrap = false
+		vim.opt_local.colorcolumn = "0"
+	end,
+})
+
+vim.filetype.add({
+	extension = {
+		psql = "sql",
+	},
+})
 
 vim.g.netrw_banner = 0
 vim.keymap.set('v', 'mf', ":normal mf<CR>", { noremap = true })
