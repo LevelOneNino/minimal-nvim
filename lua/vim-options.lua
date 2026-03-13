@@ -14,8 +14,8 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set colorcolumn=111")
 vim.cmd("set wrap")
 vim.cmd("set breakindent")
-vim.cmd("set breakindentopt=sbr,shift:8")
-vim.cmd("set showbreak=│")
+vim.cmd("set breakindentopt=sbr,shift:4")
+vim.cmd("set showbreak=--")
 
 vim.opt.lbr = true
 
